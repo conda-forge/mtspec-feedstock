@@ -1,5 +1,5 @@
-{% set version = "0.3.1" %}
-{% set sha256 = "4249d6e3fc16a64e710d9f6a0f0e0b962f8d655303bb9eded51d5618925a9193" %}
+{% set version = "0.3.2" %}
+{% set sha256 = "c20239fe3dcf6bd2ac957395b712f52e630c83a38d5347e7a3e6dce718ad4fe1" %}
 
 package:
   name: mtspec
