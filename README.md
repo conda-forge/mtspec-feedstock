@@ -9,11 +9,6 @@ Feedstock license: BSD 3-Clause
 
 Summary: Python library for multitaper spectral estimations
 
-mtspec is a Python (ctypes) wrapper for the Multitaper Spectrum Estimation
-Library mwlib.a by German A. Prieto.
-It enables you to calculate Slepian windows, perform multitaper spectral
-estimations with various options, calculate Wigner-Ville time-frequency
-distributions, and construct coherence spectra with multitapers.
 
 
 Installing mtspec

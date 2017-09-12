@@ -1,0 +1,18 @@
+--- setup.py	2016-07-26 10:49:28.000000000 -0300
++++ setup.py	2016-07-26 14:27:23.981967303 -0300
+@@ -84,11 +84,10 @@
+ def _compile(self, obj, src, ext, cc_args, extra_postargs, pp_opts):
+     compiler_so = self.compiler_so
+     if ext == ".f90":
+-        if sys.platform == 'darwin' or sys.platform == 'linux2':
+-            compiler_so = ["gfortran"]
+-            cc_args = ["-O", "-fPIC", "-c", "-ffree-form"]
+-            if arch_flag:
+-                cc_args.append(arch_flag)
++        compiler_so = ["gfortran"]
++        cc_args = ["-O", "-fPIC", "-c", "-ffree-form"]
++        if arch_flag:
++            cc_args.append(arch_flag)
+     try:
+         self.spawn(compiler_so + cc_args + [src, '-o', obj] +
+                    extra_postargs)

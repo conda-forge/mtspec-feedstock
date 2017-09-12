@@ -10,21 +10,27 @@ source:
   fn: mtspec-{{ version }}.zip
   url: https://pypi.io/packages/source/m/mtspec/mtspec-{{ version }}.zip
   sha256: {{ sha256 }}
+  patches:
+    - win_compile.patch  # [win]
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
-  skip: True  # [win]
+  skip: True  # [win and (py35 or py34) or win64]
+  script:
+    - python setup.py build --compiler=mingw32  # [win]
+    - python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - gcc
+    - gcc  # [not win]
+    - m2w64-toolchain  # [win]
     - numpy
   run:
     - python
-    - libgfortran
+    - libgfortran  # [not win]
+    - m2w64-gcc-libgfortran  # [win]
     - numpy
 
 test:
