@@ -16,9 +16,9 @@ source:
 build:
   number: 2
   script: python setup.py install --single-version-externally-managed --record record.txt
-  skip: True  # [win and (py35 or py34) or win64]
   script:
-    - python setup.py build --compiler=mingw32  # [win]
+    - python setup.py build --compiler=mingw32  # [win32]
+    - python setup.py build --compiler=mingw64  # [win64]
     - python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
